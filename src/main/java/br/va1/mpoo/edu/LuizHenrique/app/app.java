@@ -14,14 +14,8 @@ public class app {
         bd.BuscarVeiculo("ABC1234").setDescricao(null);
         bd.BuscarVeiculo("ABC1234").setOpcional(new EquipamentoOpicional(false,false,false));
 
-        bd.removerVeiculo( new Moto(
-                "Honda", "Hornet 500", 2022,
-                null,
-                new EquipamentoOpicional(false, true, true),
-                "BBB9999",
-                false,
-                470
-        ));
+        Moto Hornet = (Moto) bd.BuscarVeiculo("BBB9999");
+        bd.removerVeiculo((Veiculo)  Hornet);
         Simulador simulador1 = new Simulador(bd);
-        simulador.simularAlugueis(11);    }
+        simulador.simularAlugueis(10);   }
 }
